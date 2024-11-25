@@ -28,7 +28,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-gray-800 text-white z-50 fixed top-0 left-0 right-0">
+    <nav className="bg-blue-300 text-white z-50 fixed top-0 left-0 right-0">
       <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0">
@@ -39,20 +39,20 @@ const Navbar = () => {
             <p  className="text-xl font-bold">Ecomcharm</p></div>
           </div>
         {/* search menu */}
-          <div className='flex text-white'>
-          <div className="hidden md:flex md:items-center md:space-x-4">
+          <div className='flex text-white gap-3'>
+          {login===true &&<div className="hidden md:flex md:items-center md:space-x-4">
             <input onChange={handleSearchChange}
               type="text"
               placeholder="Search"
-              className="px-3 py-2 rounded-md text-gray-900" /> </div>
-          <Link to="/" className="hidden md:flex  hover:bg-gray-700 px-4 py-2 text-sm font-medium text-white ">Home</Link>
-          <Link to="/about" className="hidden md:flex hover:bg-gray-700 px-4 py-2 text-sm font-medium text-white ">About</Link>
-          <Link to="/cart" className="hidden md:flex hover:bg-gray-700 px-4 py-2 text-sm font-medium text-white ">Cart<sup>{ctx.cartArr.length}</sup></Link>
+              className="px-3 py-2 rounded-md text-gray-900" /> </div>}
+          {login===true &&<Link to="/" className="hidden md:flex  hover:bg-yellow-200 px-4 py-2 text-sm font-medium text-white rounded-md">Home</Link>}
+          {login===true &&<Link to="/about" className="hidden md:flex hover:bg-yellow-200 px-4 py-2 text-sm font-medium text-white rounded-md">About</Link>}
+          {login===true &&<Link to="/cart" className="hidden md:flex hover:bg-yellow-200 px-4 py-2 text-sm font-medium text-white rounded-md">Cart<sup>{ctx.cartArr.length}</sup></Link>}
           <div>
             <div className="relative">
               <button
                 onClick={toggleDropdown}
-                className="hover:bg-gray-700 hidden md:flex px-3 py-2 rounded-md text-sm font-medium"
+                className="hover:bg-yellow-200 hidden md:flex px-3 py-2 rounded-md text-sm font-medium"
               >
                 Menu
               </button>
@@ -105,7 +105,7 @@ const Navbar = () => {
             placeholder="Search"
             className="px-3 py-2 rounded-md text-gray-900 block w-full"
           />
-          <Link to="/" className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Home</Link>
+          {login===true &&<Link to="/" className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Home</Link>}
           <Link to="/about" className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">About</Link>
           <Link to="/cart" className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Cart<sup>{ctx.cartArr.length}</sup> </Link>
           <Link to="/signup" className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">Signup</Link>

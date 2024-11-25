@@ -26,7 +26,7 @@ let ctx = useContext(UserContext);
   return (
     <>
      <BrowserRouter>
-    <div className='mb-[65px]'>
+    <div className='mb-[45px]'>
     <Navbar/>
     </div>
      <Routes>
